@@ -1,9 +1,4 @@
-$primary-color: #444;
-$secondary-color: #56e79a;
-
-@mixin easeOut {
-    transition: all 0.5s ease-out;
-}
+@import 'config';
 
 
 * {
@@ -11,6 +6,7 @@ $secondary-color: #56e79a;
 }
 
 body {
+    @include background;
     background: $primary-color;
     color: #fff;
     height: 100%;
