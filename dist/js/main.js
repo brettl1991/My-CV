@@ -15,7 +15,7 @@ function toggleMenu() {
         menuBtn.classList.add('close');
         menu.classList.add('show');
         menuNav.classList.add('show');
-        menuBrending.classList.add('show');
+        menuBrending.classList.add('show')
         // for (i=0; i < navItems.length; i++) {
         //     navItems[i].classList.add('show')
         // }
