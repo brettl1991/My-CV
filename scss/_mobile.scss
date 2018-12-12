@@ -47,6 +47,16 @@
             height: 150px;
         }
     }
+
+    .about-info {
+        grid-template-areas: 
+        'bioimage'
+        'bio'
+        'experience'
+        'skills';
+
+        grid-template-columns: 1fr;
+    }
 }
 
 // Smarthphones

@@ -89,35 +89,6 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 1rem; }
-  ul.menu-nav, div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show, div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100%, 0, 0);
-    font-size: 24px; }
-  .menu-branding {
-    height: 25vh;
-    transform: translate3d(100%, 0, 0); }
-    .menu-branding .portrait {
-      background: url("../img/portfoliosmall.jpg") no-repeat;
-      width: 150px;
-      height: 150px; } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
-
 * {
   box-sizing: border-box; }
 
@@ -164,7 +135,7 @@ a {
 
 header {
   position: fixed;
-  z-index: 2;
+  z-index: 4;
   width: 100%; }
 
 .text-secondary {
@@ -172,7 +143,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%; }
+  min-height: calc(100vh-60px); }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
@@ -184,3 +155,160 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 'bioimage bio' 'experience skills';
+  grid-template-columns: repeat(2, 1fr); }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    background: url("../img/portfolio.jpg");
+    border-radius: 50%;
+    border: solid 3px #56e79a; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .experience {
+    grid-area: experience; }
+    .about-info .experience h3 {
+      font-weight: 400;
+      font-size: 1.5rem; }
+    .about-info .experience p {
+      text-align: left; }
+    .about-info .experience .experience_items {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+    .about-info .experience .experience_item {
+      padding: 6px 5px;
+      background-color: #313131;
+      color: #999;
+      border-width: 1px 1px 2px 1px;
+      border-style: solid;
+      border-color: #56e79a;
+      border-radius: 3px;
+      font-weight: 700;
+      line-height: 1em;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+      margin: 3px;
+      position: relative;
+      overflow: hidden; }
+      .about-info .experience .experience_item::after, .about-info .experience .experience_item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50%;
+        display: block;
+        width: 100%;
+        z-index: 1;
+        transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1); }
+      .about-info .experience .experience_item::before {
+        top: 0;
+        background-color: #515151;
+        transform: translate3d(-105%, 0, 0); }
+      .about-info .experience .experience_item::after {
+        background-color: #3f3f3f;
+        top: 50%;
+        transform: translate3d(105%, 0, 0);
+        transition-delay: 75ms; }
+      .about-info .experience .experience_item:hover::after, .about-info .experience .experience_item:hover::before {
+        transform: translate3d(0, 0, 0); }
+      .about-info .experience .experience_item span {
+        position: relative;
+        z-index: 2; }
+  .about-info .skills {
+    grid-area: skills; }
+    .about-info .skills h3 {
+      font-weight: 400;
+      font-size: 1.5rem; }
+  .about-info .front_back-others {
+    text-align: center; }
+  .about-info .skill_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .about-info .skill_item {
+    padding: 6px 5px;
+    background-color: #313131;
+    color: #999;
+    border-width: 1px 1px 2px 1px;
+    border-style: solid;
+    border-color: #56e79a;
+    border-radius: 3px;
+    font-weight: 700;
+    line-height: 1em;
+    box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+    margin: 3px;
+    position: relative;
+    overflow: hidden; }
+    .about-info .skill_item::after, .about-info .skill_item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 50%;
+      display: block;
+      width: 100%;
+      z-index: 1;
+      transition: transform 0.3s cubic-bezier(0.65, 0.05, 0.1, 1); }
+    .about-info .skill_item::before {
+      top: 0;
+      background-color: #515151;
+      transform: translate3d(-105%, 0, 0); }
+    .about-info .skill_item::after {
+      background-color: #3f3f3f;
+      top: 50%;
+      transform: translate3d(105%, 0, 0);
+      transition-delay: 75ms; }
+    .about-info .skill_item:hover::after, .about-info .skill_item:hover::before {
+      transform: translate3d(0, 0, 0); }
+    .about-info .skill_item span {
+      position: relative;
+      z-index: 2; }
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2b2b2b;
+  color: #fff;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem; }
+  ul.menu-nav, div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show, div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 24px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      background: url("../img/portfoliosmall.jpg") no-repeat;
+      width: 150px;
+      height: 150px; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'experience' 'skills';
+    grid-template-columns: 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
